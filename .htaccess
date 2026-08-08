@@ -1,0 +1,15 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?]
+RewriteRule ^index\.html$ ./ [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+en\.html[\s?]
+RewriteRule ^en\.html$ en [R=301,L]
+
+RewriteRule ^en/$ en [R=301,L]
+RewriteRule ^en/?$ en.html [L]

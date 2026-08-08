@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rien Klok — Heren Haar Verzorger</title>
+  <meta name="description" content="Rien Klok is een klassieke herenkapper aan de Maasstraat 175 in Amsterdam. Voor een afspraak belt u 06 28410433.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#22372B">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="alternate" hreflang="en" href="en">
+  <link rel="alternate" hreflang="nl" href="./">
+  <meta property="og:title" content="Rien Klok — Heren Haar Verzorger, Amsterdam">
+  <meta property="og:description" content="Klassieke herenkapper aan de Maasstraat 175. Voor een afspraak belt u 06 28410433.">
+  <meta property="og:type" content="business.business">
+  <meta property="og:locale" content="nl_NL">
+  <style>
+    @font-face{
+      font-family:'Anton';
+      src:url('fonts/anton-latin.woff2') format('woff2');
+      font-weight:400;
+      font-style:normal;
+      font-display:swap;
+    }
+    @font-face{
+      font-family:'Karla';
+      src:url('fonts/karla-latin.woff2') format('woff2');
+      font-weight:400 700;
+      font-style:normal;
+      font-display:swap;
+    }
+
+    :root{
+      --groen:#22372B;
+      --groen-diep:#1A2B21;
+      --papier:#EFE7D6;
+      --papier-dof:#D8CDB4;
+      --steen:#DE4E2B;
+      --oker:#C9A227;
+      --zwart:#161311;
+      --lijn:rgba(239,231,214,.22);
+      --schaduw:0 24px 70px rgba(0,0,0,.28);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      background:
+        radial-gradient(circle at 50% 0%, rgba(239,231,214,.08), transparent 36rem),
+        var(--groen);
+      color:var(--papier);
+      font-family:'Karla',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      font-size:17px;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{color:inherit}
+    a:focus-visible, button:focus-visible{outline:3px solid var(--oker);outline-offset:4px}
+    .kader{max-width:960px;margin:0 auto;padding:0 clamp(28px,5vw,56px)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+    .topbar{padding-top:14px;display:flex;justify-content:flex-end;align-items:center}
+    .topbar .taal{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      font-weight:700;
+      font-size:14px;
+      letter-spacing:.12em;
+      color:var(--papier-dof);
+      border:1px solid var(--lijn);
+      padding:4px 10px;
+      border-radius:2px;
+      text-transform:uppercase;
+      text-decoration:none;
+    }
+    .topbar .taal svg{width:15px;height:15px;flex:none}
+    .topbar .taal:hover{
+      color:var(--papier);
+      border-color:var(--papier);
+    }
+
+    .lint{
+      height:10px;
+      background:repeating-linear-gradient(-45deg,var(--steen) 0 14px,var(--papier) 14px 28px,var(--groen-diep) 28px 42px);
+    }
+
+    .hero{padding-top:18px;padding-bottom:60px;text-align:center}
+    .logo-wrap{max-width:540px;margin:0 auto}
+    .logo-img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
+    .hero-copy{max-width:44ch;margin:22px auto 0;color:var(--papier-dof);font-size:18px;line-height:1.55}
+    .hero-copy p{margin:0}
+    .hero-copy .hero-kop{color:var(--papier);font-size:clamp(24px,3vw,32px);font-weight:500;line-height:1.25}
+    .hero-copy .hero-regel{margin-top:10px}
+
+    .hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+    .knop{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 22px;
+      border:1.5px solid var(--papier);border-radius:3px;text-decoration:none;font-weight:700;letter-spacing:.04em;
+      transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
+    }
+    .knop svg{width:18px;height:18px;flex:none}
+    .knop:hover{transform:translateY(-1px)}
+    .knop.primary{background:var(--papier);color:var(--groen);border-color:var(--papier)}
+    .knop.secondary:hover{background:rgba(239,231,214,.1)}
+
+    .belblok{background:var(--steen);color:var(--papier);text-align:center;padding:60px 24px;box-shadow:var(--schaduw)}
+    .belblok .label{font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.9;margin-bottom:14px}
+    .belblok .nummer{font-family:'Anton',Impact,sans-serif;font-size:clamp(36px,8vw,68px);letter-spacing:.06em;text-decoration:none;display:inline-block;border-bottom:4px solid rgba(239,231,214,.35);padding-bottom:4px;line-height:1.05}
+    .belblok .nummer:hover{border-color:var(--papier)}
+    .belblok .belstatus{display:flex;align-items:center;justify-content:center;gap:9px;width:fit-content;max-width:100%;margin:20px auto 0;padding:6px 12px;border:1px solid rgba(239,231,214,.4);border-radius:2px;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .belblok .belstatus::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--papier-dof)}
+    .belblok.belbaar .belstatus::before{background:var(--oker)}
+    .belblok.gesloten .belstatus{color:var(--papier-dof)}
+    .belblok .uitleg{max-width:44ch;margin:18px auto 0;font-size:16px;opacity:.92}
+
+    .sectie{padding-top:80px;padding-bottom:80px}
+    h2{font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(28px,4vw,36px);line-height:1.1;margin-bottom:10px}
+    .sub{color:var(--papier-dof);margin-bottom:34px;max-width:56ch}
+
+    .tijden h2{text-align:center}
+    .tijden .sub{margin-left:auto;margin-right:auto;text-align:center}
+    .tijden-grid{display:grid;grid-template-columns:minmax(0,620px);justify-content:center;align-items:start}
+    table{width:100%;border-collapse:collapse}
+    td{padding:13px 4px;border-bottom:1px solid var(--lijn);font-size:17px}
+    td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+    tr.dicht td{color:var(--papier-dof)}
+    tr.vandaag td{color:var(--oker);font-weight:700}
+    tr.vandaag td:first-child::after{content:'· vandaag';font-size:13px;font-weight:700;letter-spacing:.08em;margin-left:10px;text-transform:uppercase}
+
+    .locatie{border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn);background:rgba(26,43,33,.45)}
+    .locatie-grid{display:grid;grid-template-columns:minmax(220px,.95fr) minmax(260px,1fr);gap:48px;align-items:center}
+    .locatie-info{display:grid;gap:14px;justify-items:start}
+    .locatie .waar-actions{margin-top:10px}
+    .locatie-title{font-family:'Anton',Impact,sans-serif;color:var(--oker);font-size:clamp(34px,5vw,52px);font-weight:400;text-transform:uppercase;letter-spacing:.04em;line-height:1.08;margin:0}
+    .locatie-title.nl{font-size:clamp(30px,4vw,42px)}
+    .locatie-title-sub{margin-top:10px;color:var(--papier-dof);font-size:15px;font-weight:700;line-height:1.35;letter-spacing:.12em;text-transform:uppercase}
+    .adres{font-family:'Anton',Impact,sans-serif;font-size:clamp(22px,3.5vw,34px);text-transform:uppercase;letter-spacing:.04em;line-height:1.22}
+    .waar-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+
+    footer{border-top:1px solid var(--lijn);padding:28px 0 36px;font-size:14px;color:var(--papier-dof)}
+    footer .kader{text-align:center}
+    @media (max-width:760px){
+      body{font-size:16px}
+      .topbar{justify-content:flex-end;padding-top:12px}
+      .hero{padding-top:44px;padding-bottom:56px}
+      .logo-wrap{max-width:470px}
+      .sectie{padding-top:64px;padding-bottom:64px}
+      .tijden-grid{grid-template-columns:1fr;gap:28px}
+      .locatie-grid{grid-template-columns:1fr;gap:28px}
+      td{font-size:16px}
+      .belblok{padding:52px 20px}
+      .knop{width:100%;max-width:360px}
+      .hero-actions{gap:10px}
+    }
+
+    @media (max-width:480px){
+      .kader{padding-left:24px;padding-right:24px}
+      .hero{padding-top:36px}
+      .hero-copy{margin-top:28px;font-size:16px}
+      .belblok .nummer{font-size:clamp(34px,12vw,54px)}
+      tr.vandaag td:first-child::after{display:block;margin-left:0;margin-top:2px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *{transition:none !important}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BarberShop",
+    "@id":"https://www.google.com/maps?cid=603180245686604260",
+    "name":"Rien Klok Heren Haar Verzorger",
+    "alternateName":"Rien Klok",
+    "description":"Klassieke herenkapper aan de Maasstraat 175 in Amsterdam. Voor een afspraak belt u 06 28410433.",
+    "telephone":"+31628410433",
+    "image":"logo.png",
+    "priceRange":"€€",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Maasstraat 175",
+      "postalCode":"1079 BG",
+      "addressLocality":"Amsterdam",
+      "addressCountry":"NL"
+    },
+    "geo":{
+      "@type":"GeoCoordinates",
+      "latitude":52.3420107,
+      "longitude":4.8977576
+    },
+    "areaServed":[
+      "Rivierenbuurt",
+      "Amsterdam-Zuid",
+      "Amsterdam"
+    ],
+    "hasMap":"https://www.google.com/maps?cid=603180245686604260",
+    "sameAs":[
+      "https://www.google.com/maps?cid=603180245686604260"
+    ],
+    "openingHoursSpecification":[
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday"],"opens":"10:00","closes":"17:30"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"15:00"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="lint" aria-hidden="true"></div>
+
+  <header class="topbar kader" aria-label="Taalkeuze">
+    <a class="taal" href="en" hreflang="en" lang="en" aria-label="Bekijk de Engelse versie">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+      <span>English</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero kader" aria-labelledby="hoofdtitel">
+      <h1 id="hoofdtitel" class="sr-only">Rien Klok — Heren Haar Verzorger in Amsterdam</h1>
+      <div class="logo-wrap">
+        <img src="logo.png" alt="Rien Klok — Heren Haar Verzorger" class="logo-img" width="960" height="577">
+      </div>
+      <div class="hero-copy">
+        <p class="hero-kop">Knippen zoals het hoort.</p>
+        <p class="hero-regel">Voor heren die gewoon goed geknipt willen worden: rustig, persoonlijk en met vakmanschap.</p>
+      </div>
+
+      <div class="hero-actions" aria-label="Snelle acties">
+        <a class="knop primary" href="tel:+31628410433">Bel voor een afspraak</a>
+        <a class="knop secondary" href="#openingstijden">Bekijk openingstijden</a>
+      </div>
+    </section>
+
+    <section class="belblok" aria-label="Afspraak maken">
+      <p class="label">Afspraak maken? Gewoon even bellen</p>
+      <a class="nummer" href="tel:+31628410433">06&nbsp;28410433</a>
+      <p class="belstatus" id="belstatus" aria-live="polite">Bel tijdens openingstijden</p>
+      <p class="uitleg" id="beluitleg">Dan weet u meteen waar u aan toe bent.</p>
+    </section>
+
+    <section class="sectie tijden kader" id="openingstijden" aria-labelledby="openingstijden-titel">
+      <h2 id="openingstijden-titel">Openingstijden</h2>
+      <p class="sub">De zaak is geopend op woensdag tot en met zaterdag.</p>
+      <div class="tijden-grid">
+        <table aria-label="Openingstijden Rien Klok">
+          <tbody>
+            <tr data-dag="1" class="dicht"><td>Maandag</td><td>Gesloten</td></tr>
+            <tr data-dag="2" class="dicht"><td>Dinsdag</td><td>Gesloten</td></tr>
+            <tr data-dag="3"><td>Woensdag</td><td>10:00 – 17:30</td></tr>
+            <tr data-dag="4"><td>Donderdag</td><td>10:00 – 17:30</td></tr>
+            <tr data-dag="5"><td>Vrijdag</td><td>10:00 – 17:30</td></tr>
+            <tr data-dag="6"><td>Zaterdag</td><td>10:00 – 15:00</td></tr>
+            <tr data-dag="0" class="dicht"><td>Zondag</td><td>Gesloten</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sectie locatie" id="adres" aria-labelledby="adres-titel">
+      <div class="kader locatie-grid">
+        <div>
+          <h2 id="adres-titel" class="locatie-title nl">Buurtklassieker</h2>
+          <p class="locatie-title-sub">van de Rivierenbuurt</p>
+        </div>
+        <div class="locatie-info">
+          <p class="adres">Maasstraat 175<br>1079 BG Amsterdam</p>
+          <div class="waar-actions">
+            <a class="knop primary" href="https://www.google.com/maps?cid=603180245686604260" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.38-7.4 12.08a.9.9 0 0 1-1.2 0C9.54 20.38 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Google Maps</span>
+            </a>
+            <a class="knop secondary" href="tel:+31628410433">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.61a2 2 0 0 1-.45 2.11L8.09 9.63a16 16 0 0 0 6.28 6.28l1.19-1.19a2 2 0 0 1 2.11-.45c.84.29 1.71.5 2.61.62A2 2 0 0 1 22 16.92Z"/></svg>
+              <span>Bel de zaak</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="kader">
+      <span>&copy; 2026 Rien Klok</span>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    function amsterdamNu(){
+      var parts = new Intl.DateTimeFormat('en-US', {
+        timeZone:'Europe/Amsterdam',
+        weekday:'short',
+        hour:'2-digit',
+        minute:'2-digit',
+        hourCycle:'h23'
+      }).formatToParts(new Date());
+      var map = {};
+      parts.forEach(function(p){ map[p.type] = p.value; });
+      var dagMap = { 'sun':0, 'mon':1, 'tue':2, 'wed':3, 'thu':4, 'fri':5, 'sat':6 };
+      return {
+        dag: dagMap[String(map.weekday).replace('.', '').toLowerCase()],
+        minuten: Number(map.hour) * 60 + Number(map.minute)
+      };
+    }
+
+    function kanNuBellen(nu){
+      var tijden = {
+        3: [10 * 60, 17 * 60 + 30],
+        4: [10 * 60, 17 * 60 + 30],
+        5: [10 * 60, 17 * 60 + 30],
+        6: [10 * 60, 15 * 60]
+      };
+      var vandaag = tijden[nu.dag];
+      return Boolean(vandaag && nu.minuten >= vandaag[0] && nu.minuten < vandaag[1]);
+    }
+
+    var nu = amsterdamNu();
+    var rij = document.querySelector('tr[data-dag="'+nu.dag+'"]');
+    if(rij){ rij.classList.add('vandaag'); }
+
+    var belblok = document.querySelector('.belblok');
+    var status = document.getElementById('belstatus');
+    var uitleg = document.getElementById('beluitleg');
+    if(belblok && status && uitleg){
+      if(kanNuBellen(nu)){
+        belblok.classList.add('belbaar');
+        status.textContent = 'Nu bereikbaar';
+        uitleg.textContent = 'Bel gerust, dan weet u meteen waar u aan toe bent.';
+      } else {
+        belblok.classList.add('gesloten');
+        status.textContent = 'Nu niet bereikbaar';
+        uitleg.textContent = 'Bel op woensdag tot en met zaterdag tijdens openingstijden.';
+      }
+    }
+  })();
+  </script>
+</body>
+</html>
